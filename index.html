@@ -19,6 +19,10 @@
             text-align: center;
         }
 
+        h6 {
+            text-align: center;
+        }
+
         .command {
             background-color: #f4f4f4;
             padding: 10px;
@@ -183,6 +187,102 @@
                         <li>Faça pull requests para revisão de código</li>
                     </ul>
                 </div>
+                <div>
+                    <h2>3. Resolução de Conflitos</h2>
+
+                    <h3>O que são Conflitos?</h3>
+                    <p>Conflitos ocorrem quando duas ou mais pessoas modificam as mesmas linhas de código em diferentes
+                        branches, e o Git não consegue determinar automaticamente qual versão deve ser mantida.</p>
+
+                    <h3>Quando Conflitos Acontecem?</h3>
+                    <ul>
+                        <li>Durante merge de branches</li>
+                        <li>Durante pull de mudanças remotas</li>
+                        <li>Durante rebase</li>
+                        <li>Quando múltiplos desenvolvedores editam o mesmo arquivo</li>
+                    </ul>
+
+                    <h3>Exemplo de Conflito</h3>
+                    <p>Quando você tenta fazer merge e há conflito, o Git mostra algo assim:</p>
+                    <div class="command">
+                        Auto-merging arquivo.html<br>
+                        CONFLICT (content): Merge conflict in arquivo.html<br>
+                        Automatic merge failed; fix conflicts and then commit the result.
+                    </div>
+
+                    <p>O arquivo conflituoso ficará assim:</p>
+                    <div class="command">
+                        &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD<br>
+                        &lt;h1&gt;Minha versão do título&lt;/h1&gt;<br>
+                        =======<br>
+                        &lt;h1&gt;Versão do título do colega&lt;/h1&gt;<br>
+                        &gt;&gt;&gt;&gt;&gt;&gt;&gt; feat/outra-branch
+                    </div>
+
+                    <h3>Como Resolver Conflitos - Passo a Passo</h3>
+
+                    <h4>Passo 1: Identificar Conflitos</h4>
+                    <div class="command">git status</div>
+                    <p>Mostrará arquivos em conflito como "both modified"</p>
+
+                    <h4>Passo 2: Abrir e Editar Arquivos</h4>
+                    <p>Abra os arquivos conflituosos e procure por:</p>
+                    <ul>
+                        <li>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD - início da sua versão</li>
+                        <li>======= - separador</li>
+                        <li>&gt;&gt;&gt;&gt;&gt;&gt;&gt; nome-da-branch - fim da outra versão</li>
+                    </ul>
+
+                    <h4>Passo 3: Escolher a Resolução</h4>
+                    <p>Você pode:</p>
+                    <ul>
+                        <li>Manter apenas sua versão</li>
+                        <li>Manter apenas a outra versão</li>
+                        <li>Combinar ambas as versões</li>
+                        <li>Escrever algo completamente novo</li>
+                    </ul>
+
+                    <h4>Passo 4: Limpar os Marcadores</h4>
+                    <p>Remova todas as linhas com &lt;&lt;&lt;, ===, &gt;&gt;&gt;</p>
+
+                    <h4>Passo 5: Testar a Resolução</h4>
+                    <p>Teste se o código funciona corretamente após a resolução</p>
+
+                    <h4>Passo 6: Adicionar e Commitar</h4>
+                    <div class="command">git add arquivo-resolvido.html</div>
+                    <div class="command">git commit -m "resolve: conflito na página principal"</div>
+
+
+                    <h3>Comandos Úteis para Conflitos</h3>
+
+                    <div class="command">git diff</div>
+                    <p>Mostra diferenças antes do merge</p>
+
+                    <div class="command">git status </div>
+                    <p>Mostra quais arquivos foram alterados para a realização de uma analise detalhada</p>
+
+                    <h3>Prevenção de Conflitos</h3>
+                    <ul>
+                        <li>Comunique-se com a equipe sobre arquivos sendo editados</li>
+                        <li>Faça pulls frequentes da branch principal</li>
+                        <li>Mantenha commits pequenos e frequentes</li>
+                        <li>Use branches de feature para isolamento</li>
+                        <li>Defina responsabilidades claras por arquivos/seções</li>
+                    </ul>
+
+                    <h3>Resolução de Conflitos no GitHub</h3>
+                    <p>O GitHub também oferece interface web para resolver conflitos simples diretamente na plataforma,
+                        sem necessidade de usar linha de comando.</p>
+                </div>
+                <footer>
+                    <div>
+                        <h6>Projeto: Desenvolver uma Pagina HTML estatica</h5>
+                            <h6>Henrique Granella do Nascimento</h6>
+                    </div>
+                </footer>
+        </div>
+
+
         </div>
         </section>
         </div>
