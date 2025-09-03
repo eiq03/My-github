@@ -5,6 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Git e GitHub - Conceitos e Práticas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+        }
+
+        .command {
+            background-color: #f4f4f4;
+            padding: 10px;
+            font-family: monospace;
+            border-left: 4px solid #333;
+            margin: 10px 0;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+    </style>
 </head>
 
 <body>
@@ -92,8 +118,72 @@
                     <div>git log</div>
                     <p>Mostra o histórico de commits</p>
                 </div>
-        </div>
+            </section>
+            <section>
+                <div>
+                    <h2>2. Fluxo de Trabalho Git/GitHub</h2>
 
+                    <h3>Fluxo Básico de Desenvolvimento</h3>
+
+                    <h4>Passo 1: Clone do Repositório</h4>
+                    <p>Primeiro passo é clonar o repositório para seu ambiente local:</p>
+                    <div class="command">git clone https://github.com/usuario/My_github.git</div>
+                    <div class="command">cd My_github</div>
+
+                    <h4>Passo 2: Criação de Feature Branch</h4>
+                    <p>Crie uma nova branch para desenvolver a funcionalidade:</p>
+                    <div class="command">git checkout -b feat/conceitos-git-github</div>
+
+                    <h4>Passo 3: Desenvolvimento</h4>
+                    <p>Faça as modificações necessárias nos arquivos do projeto. Crie ou edite arquivos HTML, CSS,
+                        JavaScript, etc.</p>
+
+                    <h4>Passo 4: Verificação das Mudanças</h4>
+                    <div class="command">git status</div>
+                    <div class="command">git diff</div>
+
+                    <h4>Passo 5: Staging e Commit</h4>
+                    <p>Adicione as mudanças e crie um commit:</p>
+                    <div class="command">git add .</div>
+                    <div class="command">git commit -m "feat: adiciona página de conceitos Git/GitHub"</div>
+
+                    <h4>Passo 6: Push para o Repositório Remoto</h4>
+                    <div class="command">git push origin feat/conceitos-git-github</div>
+
+                    <h4>Passo 7: Criação de Pull Request</h4>
+                    <p>No GitHub, crie um Pull Request para integrar sua branch à branch principal (main/master)</p>
+
+                    <h4>Passo 8: Review e Merge</h4>
+                    <p>Após aprovação, faça o merge do Pull Request</p>
+
+                    <h4>Passo 9: Limpeza Local</h4>
+                    <div class="command">git checkout main</div>
+                    <div class="command">git pull origin main</div>
+                    <div class="command">git branch -d feat/conceitos-git-github</div>
+
+                    <h3>Fluxo para Múltiplas Features</h3>
+                    <p>Para cada nova feature (conceitos, fluxo, conflitos), repita o processo:</p>
+                    <ol>
+                        <li>git checkout main</li>
+                        <li>git pull origin main</li>
+                        <li>git checkout -b feat/nova-feature</li>
+                        <li>Desenvolver a feature</li>
+                        <li>git add . && git commit -m "mensagem"</li>
+                        <li>git push origin feat/nova-feature</li>
+                        <li>Criar Pull Request no GitHub</li>
+                    </ol>
+
+                    <h3>Boas Práticas</h3>
+                    <ul>
+                        <li>Use mensagens de commit descritivas e padronizadas</li>
+                        <li>Mantenha commits pequenos e focados</li>
+                        <li>Sempre teste antes de fazer push</li>
+                        <li>Use branches para cada feature</li>
+                        <li>Mantenha a branch main sempre estável</li>
+                        <li>Faça pull requests para revisão de código</li>
+                    </ul>
+                </div>
+        </div>
         </section>
         </div>
     </main>
